@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 style="text-align: center; margin-top: 1%;">STUDENT DETAILS</h3>
+<hr>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col">Place</th>
+                        <th scope="col">Pincode</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in student %}
+                    <tr>
+                        <th scope="row">{{ i[1] }}</th>
+                        <td>{{ i[2] }}</td>
+                        <td>{{ i[3] }}</td>
+                        <td>{{ i[4] }}</td>
+                        <td>{{ i[5] }}</td>
+                        <td>{{ i[6] }}</td>
+                        <td>{{ i[7] }}</td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

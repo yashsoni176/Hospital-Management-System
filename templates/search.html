@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 style="text-align: center; margin-top: 1% ;">SEARCH PATIENT</h3>
+<hr>
+<div class="container container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"></div>
+        <form action="/search" method="post">
+            <table class="table table-borderless">
+            <tr>
+                <td>Mobile Number </td>
+                <td><input name = "mobile" type="text" class="form-control"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button class="btn btn-success" type="submit">SEARCH</button></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            {% if status %}
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Mobile Number</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Date Of Birth</th>
+                  <th scope="col">Place</th>
+                  <th scope="col">Pincode</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in stud %}
+                <tr>
+                    <th scope="row">{{ i[1] }}</th>
+                    <td>{{ i[2] }}</td>
+                    <td>{{ i[3] }}</td>
+                    <td>{{ i[4] }}</td>
+                    <td>{{ i[5] }}</td>
+                    <td>{{ i[6] }}</td>
+                    <td>{{ i[7] }}</td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
